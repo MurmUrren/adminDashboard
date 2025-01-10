@@ -61,11 +61,49 @@ body{
 }
 
 .nav {
+    grid-column: 1/2;
     grid-row: 1/6;
-    background-color: lightblue;
+    background-color: rgb(106, 127, 151);
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(30px, 0.1fr));
     gap: 10px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+    min-width: 250px;
+}
+
+img[src*=".svg"] {
+  fill: white;
+  color: white;
+}
+
+.nav-logo img {
+    width: clamp(30px, 50px, 60px);
+    height: auto;
+}
+
+.nav-logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav ul {
+    padding: 0;
+}
+
+.nav ul li {
+    margin-top: 10px;
+    display: flex;
+    max-width: 100%;
+}
+
+.nav ul li img, .nav ul li svg {
+    width: clamp(20px, 30px, 40px);
+    height: auto;
+    margin-right: 10px;
+    color: white;
 }
 
 .nav .menu{
@@ -78,38 +116,132 @@ body{
     list-style: none;
 }
 
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu a:hover {
+    color: rgb(129, 133, 151);
+}
+
 .dashboard-content-container{
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 3fr 1.5fr;
     background-color: rgb(196, 206, 216);
     grid-row: 2/6;
 }
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     position: relative;
 }
 
 .card {
-    border-left: orange 8px solid;
+    border-left: rgb(1, 17, 87) 8px solid;
+    padding: 20px !important;
 }
 
-.annoucements, .card, .trending {
+.card p.title {
+  font-weight: bold;
+}
+
+.annoucements, .card, .trending-users {
     background-color: white;
     border-radius: 5px;
     box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.4);
 }
 
-.userwelcome {
+.trending-user {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
 
+.tu-info {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.tu-info p#title{
+    font-weight: lighter;
+    color: rgb(153, 160, 167);
+}
+
+.trending-user img {
+    width: clamp(30px, 50px, 60px);
+    height: auto;
+    border-radius: 50%;
+}
+
+.searchbar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.searchbar input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(196, 206, 216);
+    width: 80%;
+    font-size: 16px;
+}
+
+.searchbar img{
+    width: clamp(20px, 30px, 40px);
+    height: auto;
+}
+
+.userinfo {
+  align-self: center;
+  display: flex;
+  gap: 25px;
+  font-weight: bold;
+  align-items: center;
+}
+
+.userwelcome {
+  align-self: center;
+  display: flex;
+  align-items: center;
+}
+
+.userwelcome h1 {
+  font-size: 1.4rem;
+}
+
+.userinfo img {
+  width: clamp(30px, 50px, 60px);
+  height: auto;
+  border-radius: 50%;
+}
+
+.userinfo button {
+  all: unset;
+  
+}
+
+.userinfo button img {
+  width: clamp(20px, 30px, 40px);
+  height: auto;
+}
+
+
+.userwelcome img {
+  width: clamp(40px, 60px, 70px); /* Adjust the values to make it larger */
+  height: auto;
+  border-radius: 50%;
 }
 
 .buttons {
     display: flex;
     gap: 20px;
     height: fit-content;
+    align-self: center;
 }
 
 .buttons button {
@@ -119,12 +251,28 @@ body{
     text-align: center;
     flex: 1;
     width: clamp(80px, 85px, 90px);
-    border-radius: 10px;
+    border-radius: 30px;
     transition: box-shadow 0.3s;
+    padding: 4px;
+}
+
+button p {
+    color: white;
+    font-weight: bold;
 }
 
 .buttons button:hover {
-    
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
+.buttons button:active {
+  background-color: rgb(123, 127, 192);
+}
+
+.annoucements, .trending {
+  min-height: 150px;
+  padding: 20px !important;
+}
+
+
 
